@@ -13,9 +13,10 @@ int main() {
     char *word;
     pid_t pid;
     int status;
+    char prompt[256] = "$ ";
 
     while (1) {
-        printf("$ ");
+        printf("%s ", prompt);
         fgets(input, sizeof(input), stdin);
         input[strlen(input) - 1] = '\0';
 
@@ -46,6 +47,13 @@ int main() {
         			printf("No input directory path.\n");
     			}
     		continue;
+	}
+
+	if(strcmp(args[0], "changePrompt") == 0 && args[1] != NULL) {
+		strcpy(prompt, args[1]);
+		strcat(prompt, " ");
+		printf("seccess change prompt!\n");
+		continue;
 	}
 
         pid = fork();
