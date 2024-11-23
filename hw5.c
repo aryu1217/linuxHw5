@@ -50,7 +50,7 @@ int main() {
         if (pid < 0) perror("fork failed");
         else if (pid == 0) {
             if (execvp(args[0], args) < 0) {
-		fprintf(stderr, "execvp(%s) failed: ", args[0]);
+		fprintf(stderr, "execvp(%s) failed\n ", args[0]);
                 exit(1);
             }
         } else {
