@@ -36,11 +36,7 @@ int main() {
             			fprintf(stderr, "'chdir' to '%s' is failed.\n", args[1]);
        			}
     			} else {
-        			char cwd[1024];
-        			if (getcwd(cwd, sizeof(cwd)) != NULL) 
-            				printf("%s\n", cwd);
-        			else 
-            				perror("getcwd failed");
+        			printf("No input directory path.\n");
     			}
     		continue;
 	}
